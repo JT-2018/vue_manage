@@ -1,7 +1,24 @@
-# vue_manage
-a project for training about VUE2
+# vue-ego
 
-测试
-username: JT-2018
-email: 1085487760@qq.com
-password: github
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
