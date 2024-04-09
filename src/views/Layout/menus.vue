@@ -1,6 +1,6 @@
 <template>
       <div class="menu">
-            <el-aside width="200px" style="background-color: #002140">
+            <div class="menuBox">
                   <el-menu 
                         :default-openeds="['/order']" 
                         background-color="#002140" 
@@ -33,26 +33,59 @@
                                     <el-menu-item index="/orderBack" class="fontcolor">退货管理</el-menu-item>
                               </el-menu-item-group>
                         </el-submenu>
+                        <el-menu-item index="/webnotes">
+                              <i class="el-icon-edit"></i>
+                              <span slot="title" class="fontcolor">我的WEB</span>
+                        </el-menu-item>
                   </el-menu>
-            </el-aside>
+                  <div class="footer" @click="handleClick">
+                        <div class="icon" v-show="!isCollapse"><i class="el-icon-back"></i></div>
+                        <div class="icon" v-show="isCollapse"><i class="el-icon-right"></i></div>
+                  </div>
+            </div>
       </div>
 </template>
 
 <script>
 
 export default {
+      props: ['isCollapse'],
       data(){
-            return {
-                  isCollapse: false
+            return {}
+      },
+      methods: {
+            handleClick() {
+                  // console.log(this.isCollapse)
+                  this.$emit('toggleMenu')
             }
       }
 }
 </script>
 
 <style lang="less" scoped>
-.menu{
+.menu {
+      .el-menu-vertical-demo:not(.menuBox) {
+            width: 200px;
+      }
+      position: relative;
       .fontcolor{
             color: #fff;
+      }
+      .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 38px;
+            background-color:silver;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            .icon {
+                  width: 40px;
+                  font-size: 24px;
+            }
       }
 }
 </style>

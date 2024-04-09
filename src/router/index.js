@@ -8,6 +8,7 @@ import Goods from '../views/Goods/index.vue'
 const Order = () => import('../views/Order/index.vue')
 const Params = () => import('../views/Params/index.vue')
 const Weekend = () => import('../views/Weekend/index.vue')
+const WebNotes = () => import('../views/Webs/index.vue')
 const OrderList = () => import('../views/Order/OrderList/index.vue')
 const OrderBack = () => import('../views/Order/OrderBack/index.vue')
 
@@ -27,6 +28,11 @@ const routes = [
         path: '/goods',
         name: 'Goods',
         component: Goods
+      },
+      {
+        path: '/login',
+        name: 'Login',
+        component: Login
       },
       {
         path: '/params',
@@ -54,13 +60,13 @@ const routes = [
           },
         ]
       },
+      {
+        path: '/webnotes',
+        name: 'webnotes',
+        component: WebNotes,
+      },
     ],
   },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-  }
 ]
 
 const router = new VueRouter({
