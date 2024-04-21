@@ -11,6 +11,8 @@ const Weekend = () => import('../views/Weekend/index.vue')
 const WebNotes = () => import('../views/Webs/index.vue')
 const OrderList = () => import('../views/Order/OrderList/index.vue')
 const OrderBack = () => import('../views/Order/OrderBack/index.vue')
+const EventLoop = () => import('../views/Webs/EventLoop/index.vue')
+const Test = () => import('../views/Webs/Test/index.vue')
 
 Vue.use(VueRouter)
 
@@ -64,6 +66,16 @@ const routes = [
         path: '/webnotes',
         name: 'webnotes',
         component: WebNotes,
+        children: [
+          {
+            path: '/eventLoop',
+            component: EventLoop,
+          },
+          {
+            path: '/test',
+            component: Test,
+          },
+        ]
       },
     ],
   },

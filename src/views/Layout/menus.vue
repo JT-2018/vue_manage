@@ -33,10 +33,20 @@
                                     <el-menu-item index="/orderBack" class="fontcolor">退货管理</el-menu-item>
                               </el-menu-item-group>
                         </el-submenu>
-                        <el-menu-item index="/webnotes">
+                        <!-- <el-menu-item index="/webnotes">
                               <i class="el-icon-edit"></i>
                               <span slot="title" class="fontcolor">我的WEB</span>
-                        </el-menu-item>
+                        </el-menu-item> -->
+                        <el-submenu index="/webnotes">
+                              <template slot="title">
+                                    <i class="el-icon-document"></i>
+                                    <span class="fontcolor">我的WEB</span>
+                              </template>
+                              <el-menu-item-group>
+                                    <el-menu-item index="/eventLoop" class="fontcolor">事件循环</el-menu-item>
+                                    <el-menu-item index="/test" class="fontcolor">测试</el-menu-item>
+                              </el-menu-item-group>
+                        </el-submenu>
                   </el-menu>
                   <div class="footer" @click="handleClick">
                         <div class="icon" v-show="!isCollapse"><i class="el-icon-back"></i></div>
